@@ -4,6 +4,7 @@
  * bubble_sort - sorts and array of integers
  * @array: array of integers
  * @size: size of the array
+ * Return: none - void function
  */
 void bubble_sort(int *array, size_t size)
 {
