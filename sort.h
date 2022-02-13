@@ -1,7 +1,6 @@
-#ifndef _SORT_H
-#define _SORT_H
+#ifndef MAIN_H
+#define MAIN_H
 
-/*  Includes  */
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -23,6 +22,5 @@ typedef struct listint_s
 void bubble_sort(int *array, size_t size);
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
-
 
 #endif
