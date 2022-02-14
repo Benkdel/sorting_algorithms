@@ -1,27 +1,38 @@
 #include "sort.h"
+
 /**
- * bubble_sort - Compares adjacent elements and swaps then if
- * the are in the wrong order
- * @array: Input structure
- * @size: Length of the array(input)
- *
- * Return: Nothing
+ * bubble_sort - sorts and array of integers
+ * @array: array of integers
+ * @size: size of the array
+ * Return: none - void function
  */
 void bubble_sort(int *array, size_t size)
 {
-	unsigned int i = 0, j = 0, tmp = 0;
+	unsigned int status = 0, index = 0, temp = 0, flag = 0;
 
-	for (i = 0; i < size; i++)
+	if (size < 2)
+		return;
+	while (flag != 1)
 	{
-		for (j = 0 ; j < size - 1; j++)
+		if ((index + 1) > size)
 		{
-			if (array[j] > array[j + 1])
+			if (status == index)
+				flag = 1;
+			else
 			{
-				tmp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = tmp;
-				print_array(array, size);
+				index = 0;
+				status = 0;
 			}
 		}
+		else if (array[index + 1] < array[index])
+		{
+			temp = array[index + 1];
+			array[index + 1] = array[index];
+			array[index] = temp;
+			status = 0;
+			print_array(array, size);
+		}
+		index++;
+		status++;
 	}
 }
