@@ -8,14 +8,14 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	unsigned int status = 0, index = 0;
+	unsigned int status = 0, index = 0, counter = 1;
 	int temp = 0;
 
 	if (size >= 2)
 	{
 		while (1)
 		{
-			if ((index + 1) > size)
+			if ((index + 1) >= size)
 			{
 				if (status == index)
 					break;
@@ -24,9 +24,10 @@ void bubble_sort(int *array, size_t size)
 			}
 			if (array[index + 1] < array[index])
 			{
-				temp = array[index + 1];
-				array[index + 1] = array[index];
-				array[index] = temp;
+				temp = array[index];
+				array[index] = array[index + 1];
+				array[index + 1] = temp;
+				printf("Swap N %u || Status: %u || Index: %u -> ", counter++, status, index);
 				status = 0;
 				print_array(array, size);
 			}
