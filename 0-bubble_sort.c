@@ -27,7 +27,6 @@ void bubble_sort(int *array, size_t size)
 				temp = array[index];
 				array[index] = array[index + 1];
 				array[index + 1] = temp;
-				printf("Swap N %u || Status: %u || Index: %u -> ", counter++, status, index);
 				status = 0;
 				print_array(array, size);
 			}
